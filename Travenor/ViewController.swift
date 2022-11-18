@@ -18,8 +18,13 @@ class ViewController: UIViewController {
         view.addSubview(nameLabel)
         nameLabel.text = "Travenor"
         
-        nameLabel.font = UIFont(name: "Geometric", size: 34)
+        nameLabel.font = UIFont(name: "Geometric415BT-BlackA", size: 34)
         //nameLabel.font = UIFont(name: "Geometr415 Blk BT", size: 34)
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
         
         
     }
