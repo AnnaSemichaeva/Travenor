@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     lazy var imageView: UIImageView = {
-        let image_1 = "image_1.png"
+        let image_1 = "Image_1.png"
         let image = UIImage(named: image_1)
         let imageView = UIImageView(image: image!)
         return imageView
