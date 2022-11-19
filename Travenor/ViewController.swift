@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        view.backgroundColor = #colorLiteral(red: 0.003531566821, green: 0.5280565619, blue: 0.9950402379, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 //
 //        nameLabel = UILabel(frame: CGRect(x: 121, y: 385, width: 133, height: 42))
 //        view.addSubview(nameLabel)
@@ -22,10 +22,10 @@ class ViewController: UIViewController {
 //        nameLabel.font = UIFont(name: "Geometric415BT-BlackA", size: 34)
         
         //A quick way to find the font name
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
         
         nameLabel.textColor = .white
         
@@ -37,6 +37,13 @@ class ViewController: UIViewController {
         let image = UIImage(named: image_1)
         let imageView = UIImageView(image: image!)
         return imageView
+    }()
+    
+    lazy var imageView2: UIImageView = {
+        let image_2 = "LifeIsShort.png"
+        let image2 = UIImage(named: image_2)
+        let imageView2 = UIImageView(image: image2!)
+        return imageView2
     }()
     
     lazy var registerButton: UIButton = {
@@ -52,7 +59,7 @@ class ViewController: UIViewController {
     
     lazy var containerStackView: UIStackView = {
             let spacer = UIView()
-            let stackView = UIStackView(arrangedSubviews: [imageView,registerButton])
+            let stackView = UIStackView(arrangedSubviews: [imageView,imageView2,registerButton])
             stackView.axis = .vertical
             stackView.spacing = 16.0
             return stackView
@@ -71,8 +78,20 @@ class ViewController: UIViewController {
                 containerStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24),
                 containerStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -24),
                 // 7. Set button height
-                registerButton.heightAnchor.constraint(equalToConstant: 50)
+                registerButton.heightAnchor.constraint(equalToConstant: 50),
+                
+                //imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
+                //imageView2.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
+                
+                //imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+                //imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+                //imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 80),
+                //imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+                imageView.heightAnchor.constraint(equalToConstant: 400)
+                
             ])
+        
+            
         }
         
         // 8. To be updated
