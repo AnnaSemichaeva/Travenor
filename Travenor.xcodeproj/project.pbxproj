@@ -13,7 +13,6 @@
 		63833FFD29256F980077964D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63833FFC29256F980077964D /* Assets.xcassets */; };
 		6383400029256F980077964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63833FFE29256F980077964D /* LaunchScreen.storyboard */; };
 		6383400A2927C6E70077964D /* Geometric.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 638340092927C6E70077964D /* Geometric.ttf */; };
-		6383400D2927CC130077964D /* Geometric 415 Black BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6383400C2927CC130077964D /* Geometric 415 Black BT.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		63833FFF29256F980077964D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6383400129256F980077964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638340092927C6E70077964D /* Geometric.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometric.ttf; sourceTree = "<group>"; };
-		6383400C2927CC130077964D /* Geometric 415 Black BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometric 415 Black BT.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +56,6 @@
 		63833FF229256F960077964D /* Travenor */ = {
 			isa = PBXGroup;
 			children = (
-				6383400C2927CC130077964D /* Geometric 415 Black BT.ttf */,
-				638340092927C6E70077964D /* Geometric.ttf */,
 				6383400B2927C6F80077964D /* Helpers */,
 				63833FF329256F960077964D /* AppDelegate.swift */,
 				63833FF529256F960077964D /* SceneDelegate.swift */,
@@ -74,6 +70,7 @@
 		6383400B2927C6F80077964D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				638340092927C6E70077964D /* Geometric.ttf */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -138,7 +135,6 @@
 			files = (
 				6383400029256F980077964D /* LaunchScreen.storyboard in Resources */,
 				6383400A2927C6E70077964D /* Geometric.ttf in Resources */,
-				6383400D2927CC130077964D /* Geometric 415 Black BT.ttf in Resources */,
 				63833FFD29256F980077964D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
