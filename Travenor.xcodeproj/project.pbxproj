@@ -13,6 +13,7 @@
 		63833FFD29256F980077964D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63833FFC29256F980077964D /* Assets.xcassets */; };
 		6383400029256F980077964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63833FFE29256F980077964D /* LaunchScreen.storyboard */; };
 		6383400A2927C6E70077964D /* Geometric.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 638340092927C6E70077964D /* Geometric.ttf */; };
+		6383401829296F530077964D /* gillsansmt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6383401729296F530077964D /* gillsansmt.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		63833FFF29256F980077964D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6383400129256F980077964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638340092927C6E70077964D /* Geometric.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometric.ttf; sourceTree = "<group>"; };
+		6383401729296F530077964D /* gillsansmt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gillsansmt.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		6383400B2927C6F80077964D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6383401729296F530077964D /* gillsansmt.ttf */,
 				638340092927C6E70077964D /* Geometric.ttf */,
 			);
 			path = Helpers;
@@ -133,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6383401829296F530077964D /* gillsansmt.ttf in Resources */,
 				6383400029256F980077964D /* LaunchScreen.storyboard in Resources */,
 				6383400A2927C6E70077964D /* Geometric.ttf in Resources */,
 				63833FFD29256F980077964D /* Assets.xcassets in Resources */,

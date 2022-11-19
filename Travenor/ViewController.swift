@@ -22,10 +22,10 @@ class ViewController: UIViewController {
 //        nameLabel.font = UIFont(name: "Geometric415BT-BlackA", size: 34)
         
         //A quick way to find the font name
-//        for family in UIFont.familyNames.sorted() {
-//            let names = UIFont.fontNames(forFamilyName: family)
-//            print("Family: \(family) Font names: \(names)")
-//        }
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
         
         nameLabel.textColor = .white
         
@@ -46,6 +46,20 @@ class ViewController: UIViewController {
         return imageView2
     }()
     
+    lazy var textView: UITextView = {
+            let textView = UITextView(frame: .zero)
+            textView.font = UIFont(name: "GillSansMT", size: 20)
+            textView.isEditable = false
+            //textView.text = "At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world"
+            let style = NSMutableParagraphStyle()
+            style.alignment = .center
+            let text = NSAttributedString(string: "At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world",
+                                          attributes: [NSAttributedString.Key.paragraphStyle:style])
+            textView.attributedText = text
+            textView.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            return textView
+        }()
+    
     lazy var registerButton: UIButton = {
         
         let button = UIButton()
@@ -59,7 +73,7 @@ class ViewController: UIViewController {
     
     lazy var containerStackView: UIStackView = {
             let spacer = UIView()
-            let stackView = UIStackView(arrangedSubviews: [imageView,imageView2,registerButton])
+            let stackView = UIStackView(arrangedSubviews: [imageView,imageView2,textView,registerButton])
             stackView.axis = .vertical
             stackView.spacing = 16.0
             return stackView
@@ -87,7 +101,12 @@ class ViewController: UIViewController {
                 //imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
                 //imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 80),
                 //imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
-                imageView.heightAnchor.constraint(equalToConstant: 400)
+                imageView.heightAnchor.constraint(equalToConstant: 400),
+                
+                imageView2.heightAnchor.constraint(equalToConstant: 100),
+                imageView2.widthAnchor.constraint(equalToConstant: 50),
+                
+                
                 
             ])
         
