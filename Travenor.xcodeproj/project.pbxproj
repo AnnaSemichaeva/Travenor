@@ -14,6 +14,10 @@
 		6383400029256F980077964D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63833FFE29256F980077964D /* LaunchScreen.storyboard */; };
 		6383400A2927C6E70077964D /* Geometric.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 638340092927C6E70077964D /* Geometric.ttf */; };
 		6383401829296F530077964D /* gillsansmt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6383401729296F530077964D /* gillsansmt.ttf */; };
+		6383401A292983420077964D /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63834019292983420077964D /* CustomModalViewController.swift */; };
+		6383401D292AA5840077964D /* OnboardingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383401C292AA5840077964D /* OnboardingCollectionView.swift */; };
+		63834020292AA7090077964D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383401F292AA7090077964D /* Extensions.swift */; };
+		63834022292AA9180077964D /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63834021292AA9180077964D /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		6383400129256F980077964D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		638340092927C6E70077964D /* Geometric.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometric.ttf; sourceTree = "<group>"; };
 		6383401729296F530077964D /* gillsansmt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gillsansmt.ttf; sourceTree = "<group>"; };
+		63834019292983420077964D /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
+		6383401C292AA5840077964D /* OnboardingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionView.swift; sourceTree = "<group>"; };
+		6383401F292AA7090077964D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63834021292AA9180077964D /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,12 @@
 		63833FF229256F960077964D /* Travenor */ = {
 			isa = PBXGroup;
 			children = (
+				6383401B292AA5580077964D /* Onboarding */,
 				6383400B2927C6F80077964D /* Helpers */,
 				63833FF329256F960077964D /* AppDelegate.swift */,
 				63833FF529256F960077964D /* SceneDelegate.swift */,
 				63833FF729256F960077964D /* ViewController.swift */,
+				63834019292983420077964D /* CustomModalViewController.swift */,
 				63833FFC29256F980077964D /* Assets.xcassets */,
 				63833FFE29256F980077964D /* LaunchScreen.storyboard */,
 				6383400129256F980077964D /* Info.plist */,
@@ -74,8 +84,18 @@
 			children = (
 				6383401729296F530077964D /* gillsansmt.ttf */,
 				638340092927C6E70077964D /* Geometric.ttf */,
+				6383401F292AA7090077964D /* Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6383401B292AA5580077964D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6383401C292AA5840077964D /* OnboardingCollectionView.swift */,
+				63834021292AA9180077964D /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63833FF829256F960077964D /* ViewController.swift in Sources */,
+				63834020292AA7090077964D /* Extensions.swift in Sources */,
+				6383401A292983420077964D /* CustomModalViewController.swift in Sources */,
 				63833FF429256F960077964D /* AppDelegate.swift in Sources */,
 				63833FF629256F960077964D /* SceneDelegate.swift in Sources */,
+				63834022292AA9180077964D /* OnboardingCollectionViewCell.swift in Sources */,
+				6383401D292AA5840077964D /* OnboardingCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
