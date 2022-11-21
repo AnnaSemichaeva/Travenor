@@ -7,7 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
+    
+    scrollView.delegate = self
+    
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 5
+        
+        return pageControl
+    }()
     
     //var nameLabel = UILabel()
     
@@ -30,6 +39,10 @@ class ViewController: UIViewController {
         //nameLabel.textColor = .white
         
         setupConstraints()
+        
+        
+
+        configurePageControl()
     }
     
 //    lazy var imageView: UIImageView = {
@@ -59,6 +72,9 @@ class ViewController: UIViewController {
 //        textView.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
 //        return textView
 //    }()
+    
+    
+    //var pageControl: UIPageControl = UIPageControl(frame: CGRectMake(50, 300, 200, 20))
     
     lazy var imageView3: UIImageView = {
         let image_3 = "ProgressBar_1.png"
@@ -93,6 +109,25 @@ class ViewController: UIViewController {
         //view.backgroundColor = .blue
         return view
     }()
+    
+    
+    
+    
+//    func configurePageControl() {
+//         self.pageControl.numberOfPages = 4
+//         self.pageControl.currentPage = 0
+//        self.pageControl.tintColor = UIColor.red
+//         self.pageControl.pageIndicatorTintColor = UIColor.black
+//         self.pageControl.currentPageIndicatorTintColor = UIColor.green
+//         self.view.addSubview(pageControl)
+//     }
+    
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+//        pageControl.currentPage = Int(pageNumber)
+//    }
+    
+    
     
     func setupConstraints() {
 //        view.addSubview(containerStackView)
@@ -133,18 +168,23 @@ class ViewController: UIViewController {
         
 //        onboardingCollectionView.putTo(parent: view)
         view.addSubview(onboardingCollectionView)
-        onboardingCollectionView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        onboardingCollectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+        onboardingCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        onboardingCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         onboardingCollectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         onboardingCollectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         
         view.addSubview(registerButton)
         view.addSubview(imageView3)
+        view.addSubview(pageControl)
         
         NSLayoutConstraint.activate([
         registerButton.heightAnchor.constraint(equalToConstant: 50),
+        registerButton.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
         registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+        //registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+        registerButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -24),
+        
+        //imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
         
         imageView3.heightAnchor.constraint(equalToConstant: 7),
         imageView3.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -57,15 +57,24 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         self.addSubview(containerStackView)
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         
+        let safeArea = self.safeAreaLayoutGuide
+        
         // 5. Call .activate method to enable the defined constraints
         NSLayoutConstraint.activate([
             // 6. Set containerStackView edges to superview with 24 spacing
-            containerStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
-            containerStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -24),
-            containerStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            containerStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
+            containerStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            containerStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+            containerStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            containerStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             
-            imageView.heightAnchor.constraint(equalToConstant: 400),
+            
+            //            containerStackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 24),
+            //            containerStackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -24),
+            //            containerStackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24),
+            //            containerStackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -24),
+            
+            imageView.heightAnchor.constraint(equalToConstant: 500),
+            imageView.topAnchor.constraint(equalTo: containerStackView.topAnchor, constant: 0),
             
             imageView2.heightAnchor.constraint(equalToConstant: 100),
             imageView2.widthAnchor.constraint(equalToConstant: 50)
