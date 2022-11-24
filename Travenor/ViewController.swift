@@ -239,10 +239,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //        ])
 //    }
 //
-//    // 8. To be updated
-//    @objc func presentModalController() {
-//        //
-//    }
+//    
 //
 ////        lazy var containerView: UIView = {
 ////                let containerView = UIView()
