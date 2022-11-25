@@ -9,14 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
-    scrollView.delegate = self
+    //scrollView.delegate = self
     
-    private let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = 5
-        
-        return pageControl
-    }()
+    
     
     //var nameLabel = UILabel()
     
@@ -43,6 +38,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
 
         configurePageControl()
+        
+        
     }
     
 //    lazy var imageView: UIImageView = {
@@ -75,6 +72,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     //var pageControl: UIPageControl = UIPageControl(frame: CGRectMake(50, 300, 200, 20))
+    
+    
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 5
+        
+        return pageControl
+    }()
     
     lazy var imageView3: UIImageView = {
         let image_3 = "ProgressBar_1.png"
@@ -113,19 +118,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     
-//    func configurePageControl() {
-//         self.pageControl.numberOfPages = 4
-//         self.pageControl.currentPage = 0
-//        self.pageControl.tintColor = UIColor.red
-//         self.pageControl.pageIndicatorTintColor = UIColor.black
-//         self.pageControl.currentPageIndicatorTintColor = UIColor.green
-//         self.view.addSubview(pageControl)
-//     }
+    func configurePageControl() {
+         self.pageControl.numberOfPages = 4
+         self.pageControl.currentPage = 0
+        self.pageControl.tintColor = UIColor.red
+         self.pageControl.pageIndicatorTintColor = UIColor.black
+         self.pageControl.currentPageIndicatorTintColor = UIColor.green
+         //self.view.addSubview(pageControl)
+     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-//        pageControl.currentPage = Int(pageNumber)
-//    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
+    }
     
     
     
@@ -192,7 +197,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //imageView3.widthAnchor.constraint(equalToConstant: 30),
 //        imageView3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 170),
 //        imageView3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -150),
-        imageView3.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16)
+        imageView3.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
+        
+        
+//        pageControl.heightAnchor.constraint(equalToConstant: 7),
+//        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//        pageControl.widthAnchor.constraint(equalToConstant: 62),
+//        pageControl.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16)
         
         ])
         
@@ -239,7 +250,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //        ])
 //    }
 //
-//    
+//
 //
 ////        lazy var containerView: UIView = {
 ////                let containerView = UIView()
