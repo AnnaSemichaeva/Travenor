@@ -121,7 +121,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func configurePageControl() {
          self.pageControl.numberOfPages = 4
          self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.red
+         self.pageControl.tintColor = UIColor.red
          self.pageControl.pageIndicatorTintColor = UIColor.black
          self.pageControl.currentPageIndicatorTintColor = UIColor.green
          //self.view.addSubview(pageControl)
