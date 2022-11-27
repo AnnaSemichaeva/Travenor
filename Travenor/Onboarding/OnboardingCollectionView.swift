@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingCollectionView: UIView {
     
-    var delegate: OnboardingCollectionViewDelegate?
+    weak var delegate: OnboardingCollectionViewDelegate?
     
     var collectionView: UICollectionView = {
         
@@ -100,6 +100,6 @@ extension OnboardingCollectionView: UICollectionViewDelegate, UICollectionViewDa
     }
 }
 
-protocol OnboardingCollectionViewDelegate {
+protocol OnboardingCollectionViewDelegate: AnyObject {
     func pageSelected(page: Int)
 }

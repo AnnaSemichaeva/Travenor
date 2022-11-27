@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController {
     
-    //scrollView.delegate = self
+    
     
     
     
@@ -120,7 +120,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.numberOfPages = 5
         pageControl.currentPage = 0
-        pageControl.tintColor = UIColor.red
         pageControl.pageIndicatorTintColor = UIColor.black
         pageControl.currentPageIndicatorTintColor = UIColor.green
         
@@ -132,10 +131,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return pageControl
      }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-        pageControl.currentPage = Int(pageNumber)
-    }
     
     func setupConstraints() {
 //        view.addSubview(containerStackView)
