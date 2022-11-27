@@ -35,11 +35,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         setupConstraints()
         
+        // todo set up delegate
+        //onboardingCollectionView.collectionView.delegate
         
-
-        configurePageControl()
+        onboardingCollectionView.delegate = self
         
-        
+        registerButton.addTarget(self, action: #selector(scrollToNextPage), for: .touchUpInside)
+    }
+    
+    @objc private func scrollToNextPage(_ sender: Any) {
+        onboardingCollectionView.scrollToNextPage()
     }
     
 //    lazy var imageView: UIImageView = {
@@ -74,12 +79,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     //var pageControl: UIPageControl = UIPageControl(frame: CGRectMake(50, 300, 200, 20))
     
     
-    private let pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = 5
-        
-        return pageControl
-    }()
+    private var pageControl: UIPageControl!
     
     lazy var imageView3: UIImageView = {
         let image_3 = "ProgressBar_1.png"
@@ -115,24 +115,27 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    
-    
-    
-    func configurePageControl() {
-         self.pageControl.numberOfPages = 4
-         self.pageControl.currentPage = 0
-         self.pageControl.tintColor = UIColor.red
-         self.pageControl.pageIndicatorTintColor = UIColor.black
-         self.pageControl.currentPageIndicatorTintColor = UIColor.green
-         //self.view.addSubview(pageControl)
+    func configurePageControl() -> UIPageControl {
+        let pageControl = UIPageControl()
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.numberOfPages = 5
+        pageControl.currentPage = 0
+        pageControl.tintColor = UIColor.red
+        pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.currentPageIndicatorTintColor = UIColor.green
+        
+        view.addSubview(pageControl)
+        //pageControl.heightAnchor.constraint(equalToConstant: 7).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //pageControl.widthAnchor.constraint(equalToConstant: 62).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16).isActive = true
+        return pageControl
      }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
     }
-    
-    
     
     func setupConstraints() {
 //        view.addSubview(containerStackView)
@@ -179,8 +182,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         onboardingCollectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         
         view.addSubview(registerButton)
-        view.addSubview(imageView3)
-        view.addSubview(pageControl)
+        //view.addSubview(imageView3)
+        
         
         NSLayoutConstraint.activate([
         registerButton.heightAnchor.constraint(equalToConstant: 50),
@@ -191,24 +194,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         //imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
         
-        imageView3.heightAnchor.constraint(equalToConstant: 7),
-        imageView3.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        imageView3.widthAnchor.constraint(equalToConstant: 62),
-        //imageView3.widthAnchor.constraint(equalToConstant: 30),
-//        imageView3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 170),
-//        imageView3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -150),
-        imageView3.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
-        
-        
-//        pageControl.heightAnchor.constraint(equalToConstant: 7),
-//        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//        pageControl.widthAnchor.constraint(equalToConstant: 62),
-//        pageControl.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16)
+//        imageView3.heightAnchor.constraint(equalToConstant: 7),
+//        imageView3.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//        imageView3.widthAnchor.constraint(equalToConstant: 62),
+//        //imageView3.widthAnchor.constraint(equalToConstant: 30),
+////        imageView3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 170),
+////        imageView3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -150),
+//        imageView3.bottomAnchor.constraint(equalTo: registerButton.topAnchor, constant: -16),
         
         ])
         
         
-        
+        self.pageControl = configurePageControl()
     }
     
     // 8. To be updated
@@ -300,8 +297,26 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //            }()
 
 
+extension ViewController: OnboardingCollectionViewDelegate {
+    func pageSelected(page: Int) {
+        pageControl.currentPage = page
+    }
+}
 
+// gryaz clean me please!!! 😔
 
-
-
+//func scrollToNextPage() {
+//    let pageNumber = Int(round(collectionView.contentOffset.x / collectionView.frame.size.width))
+//    let nextPageNumber = pageNumber + 1
+//
+//    let targetXOffset = getOffsetXByPageNumber(pageNumber: nextPageNumber)
+//    print("targetXOffset: \(targetXOffset)")
+//    collectionView.setContentOffset(CGPoint(x: getOffsetXByPageNumber(pageNumber: nextPageNumber), y: 0), animated: true)
+////        UIView.animate(withDuration: 0.5) {
+////            self.collectionView.contentOffset.x = targetXOffset
+////        } completion: { _ in
+////            self.delegate?.pageSelected(page: Int(nextPageNumber))
+////        }
+//
+//}
 

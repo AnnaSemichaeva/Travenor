@@ -9,6 +9,8 @@ import UIKit
 
 class OnboardingCollectionView: UIView {
     
+    var delegate: OnboardingCollectionViewDelegate?
+    
     var collectionView: UICollectionView = {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -51,12 +53,28 @@ class OnboardingCollectionView: UIView {
         collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
     }
     
+    func scrollToPage(pageNumber: Int) {
+        collectionView.setContentOffset(CGPoint(x: getOffsetXByPageNumber(pageNumber: pageNumber), y: 0), animated: true)
+    }
+    
+    func scrollToNextPage() {
+        let pageNumber = Int(round(collectionView.contentOffset.x / collectionView.frame.size.width))
+        let nextPageNumber = pageNumber + 1
+        
+        let targetXOffset = getOffsetXByPageNumber(pageNumber: nextPageNumber)
+        print("targetXOffset: \(targetXOffset)")
+        collectionView.setContentOffset(CGPoint(x: getOffsetXByPageNumber(pageNumber: nextPageNumber), y: 0), animated: true)
+    }
+    
+    private func getOffsetXByPageNumber(pageNumber: Int) -> CGFloat {
+        return collectionView.frame.size.width * CGFloat(pageNumber)
+    }
 }
 
 extension OnboardingCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return data[section]?.count ?? 0
-        return 6
+        return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,4 +87,19 @@ extension OnboardingCollectionView: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    // for scrolling of scroll view
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        delegate?.pageSelected(page: Int(pageNumber))
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        delegate?.pageSelected(page: Int(pageNumber))
+    }
+}
+
+protocol OnboardingCollectionViewDelegate {
+    func pageSelected(page: Int)
 }
