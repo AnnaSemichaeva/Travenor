@@ -61,8 +61,8 @@ class ViewController: UIViewController {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.numberOfPages = 5
         pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = UIColor.black
-        pageControl.currentPageIndicatorTintColor = UIColor.green
+        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.05098039216, green: 0.431372549, blue: 0.9921568627, alpha: 1)
         
         view.addSubview(pageControl)
         //pageControl.heightAnchor.constraint(equalToConstant: 7).isActive = true
