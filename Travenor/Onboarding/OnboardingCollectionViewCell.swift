@@ -53,6 +53,11 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setData(item: OnboardingModel.OnboardingCellData) {
+        imageView.image = item.image
+        textView.text = item.text
+    }
+    
     func setUpConstraints() {
         self.addSubview(containerStackView)
         containerStackView.translatesAutoresizingMaskIntoConstraints = false

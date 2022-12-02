@@ -11,6 +11,8 @@ class OnboardingCollectionView: UIView {
     
     weak var delegate: OnboardingCollectionViewDelegate?
     
+    var data: [OnboardingModel.OnboardingCellData] = []
+    
     var collectionView: UICollectionView = {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -53,6 +55,11 @@ class OnboardingCollectionView: UIView {
         collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
     }
     
+    func setData(data: [OnboardingModel.OnboardingCellData]) {
+        self.data = data
+        collectionView.reloadData()
+    }
+    
     func scrollToPage(pageNumber: Int) {
         collectionView.setContentOffset(CGPoint(x: getOffsetXByPageNumber(pageNumber: pageNumber), y: 0), animated: true)
     }
@@ -74,13 +81,14 @@ class OnboardingCollectionView: UIView {
 extension OnboardingCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return data[section]?.count ?? 0
-        return 5
+        return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCollectionViewCell", for: indexPath) as! OnboardingCollectionViewCell
 //        let cellData = data[indexPath.section]![indexPath.row]
 //        cell.build(cellData: cellData, presenter: self)
+        cell.setData(item: data[indexPath.row])
         return cell
     }
     

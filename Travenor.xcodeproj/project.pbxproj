@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63051D4E293AB2F400577A97 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63051D4D293AB2F400577A97 /* OnboardingModel.swift */; };
 		63833FF429256F960077964D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63833FF329256F960077964D /* AppDelegate.swift */; };
 		63833FF629256F960077964D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63833FF529256F960077964D /* SceneDelegate.swift */; };
 		63833FF829256F960077964D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63833FF729256F960077964D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63051D4D293AB2F400577A97 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		63833FF029256F960077964D /* Travenor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travenor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63833FF329256F960077964D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63833FF529256F960077964D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				6383401C292AA5840077964D /* OnboardingCollectionView.swift */,
 				63834021292AA9180077964D /* OnboardingCollectionViewCell.swift */,
+				63051D4D293AB2F400577A97 /* OnboardingModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				63834020292AA7090077964D /* Extensions.swift in Sources */,
 				6383401A292983420077964D /* CustomModalViewController.swift in Sources */,
 				63833FF429256F960077964D /* AppDelegate.swift in Sources */,
+				63051D4E293AB2F400577A97 /* OnboardingModel.swift in Sources */,
 				63833FF629256F960077964D /* SceneDelegate.swift in Sources */,
 				63834022292AA9180077964D /* OnboardingCollectionViewCell.swift in Sources */,
 				6383401D292AA5840077964D /* OnboardingCollectionView.swift in Sources */,

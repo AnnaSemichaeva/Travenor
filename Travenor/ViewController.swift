@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let model = OnboardingModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -21,6 +24,8 @@ class ViewController: UIViewController {
         setupConstraints()
         onboardingCollectionView.delegate = self
         registerButton.addTarget(self, action: #selector(scrollToNextPage), for: .touchUpInside)
+        
+        onboardingCollectionView.setData(data: model.data)
     }
     
     @objc private func scrollToNextPage(_ sender: Any) {
@@ -59,7 +64,7 @@ class ViewController: UIViewController {
     func configurePageControl() -> UIPageControl {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.numberOfPages = 5
+        pageControl.numberOfPages = 3
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.05098039216, green: 0.431372549, blue: 0.9921568627, alpha: 1)
