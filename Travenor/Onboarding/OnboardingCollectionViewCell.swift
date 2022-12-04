@@ -55,6 +55,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     
     func setData(item: OnboardingModel.OnboardingCellData) {
         imageView.image = item.image
+        //textView.text = item.text2
         textView.text = item.text
     }
     
@@ -62,7 +63,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         self.addSubview(containerStackView)
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        let safeArea = self.safeAreaLayoutGuide
+        //let safeArea = self.safeAreaLayoutGuide
         
         // 5. Call .activate method to enable the defined constraints
         NSLayoutConstraint.activate([
