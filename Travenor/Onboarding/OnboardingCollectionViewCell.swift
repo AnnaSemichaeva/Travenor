@@ -56,7 +56,13 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     func setData(item: OnboardingModel.OnboardingCellData) {
         imageView.image = item.image
         //textView.text = item.text2
-        textView.text = item.text
+        textView.text = item.text1
+        textView.font = UIFont(name: "GillSansMT", size: 16)
+        textView.isEditable = false
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        
+        
     }
     
     func setUpConstraints() {
